@@ -7,7 +7,7 @@ namespace Problem1
         public abstract ToyFactory GetToy();
     }
 
-    public class CarCreator : ToyCreator {
+    public class CarsCreator : ToyCreator {
 
         public override ToyFactory GetToy() {
 
