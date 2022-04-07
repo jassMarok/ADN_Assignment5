@@ -10,7 +10,7 @@ namespace Problem1
 
             this.YearOfManufacturing = DateTimeOffset.UtcNow.Year;
         }
-        public float Cost { get; set; }
+        public double Cost { get; set; }
 
         public string Description { get; set; }
 
@@ -26,8 +26,9 @@ namespace Problem1
 
         public bool isAnyPartChokingHazard { get; set; }
 
-        public float Weight { get; set; }
+        public double Weight { get; set; }
 
+        public string Color { get; set; }   
 
 
     }

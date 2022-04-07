@@ -11,7 +11,7 @@ namespace Problem1
 
         public override ToyFactory GetToy() {
 
-            return new Cars();
+            return new Cars(true,4,true);
 
         }
 
@@ -23,7 +23,7 @@ namespace Problem1
         public override ToyFactory GetToy()
         {
 
-            return new DollHouses();
+            return new DollHouses(true, 4, true);
 
         }
 
@@ -35,7 +35,7 @@ namespace Problem1
         public override ToyFactory GetToy()
         {
 
-            return new RainbowStackers();
+            return new RainbowStackers( true,7,2);
 
         }
 
@@ -47,7 +47,7 @@ namespace Problem1
         public override ToyFactory GetToy()
         {
 
-            return new StuffedAnimals();
+            return new StuffedAnimals(true,false,true);
 
         }
 
