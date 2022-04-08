@@ -6,9 +6,9 @@ namespace Problem3
 {
     class TorontoMailHandler : MailHandler
     {
-        public TorontoMailHandler()
+        public TorontoMailHandler() : base()
         {
-            MailBoxes = new string[] { "M3C", "M4C", "M4E" };
+            MailBoxAddresses = new string[] { "M3C", "M4C", "M4E" };
         }
 
         public override string Resource => "Toronto";

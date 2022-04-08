@@ -6,9 +6,9 @@ namespace Problem3
 {
     public class HamiltonMailHandler : MailHandler
     {
-        public HamiltonMailHandler()
+        public HamiltonMailHandler() : base()
         {
-            MailBoxes = new string[] { "L8V", "L8L", "L75" };
+            MailBoxAddresses = new string[] { "L8V", "L8L", "L75" };
         }
 
         public override string Resource => "Hamilton";
