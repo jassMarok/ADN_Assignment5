@@ -4,37 +4,15 @@ using System.Text;
 
 namespace Problem3
 {
-    public class HamiltonMailHandler : IMailHandler
+    public class HamiltonMailHandler : MailHandler
     {
         public HamiltonMailHandler()
         {
-
+            MailBoxes = new string[] { "L8V", "L8L", "L75" };
         }
 
-        public string Resource => "Hamilton";
-
-        public string[] PostalCodes = { "L8V", "L8L", "L75" };
-        
-        public void Handle(Mail mail)
-        {
-            bool sorted = false;
-            foreach(var code in PostalCodes)
-            {
-                if (mail.ReceiverAddress.Contains(code))
-                {
-                    Console.WriteLine($"Mail from {mail.SenderName} going to {mail.ReceiverName} placed in {code} mailbox");
-                    sorted = true;
-                    break;
-                }
-            }
-
-            if (!sorted)
-            {
-                mail.isFlagged = true;
-                Console.WriteLine($"Mail from { mail.SenderName} going to { mail.ReceiverName} placed in review queue");
-            }
-
-        }
+        public override string Resource => "Hamilton";
 
     }
+
 }

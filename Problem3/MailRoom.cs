@@ -7,14 +7,14 @@ namespace Problem3
 {
     public class MailRoom
     {
-        private List<IMailHandler> handlers = new List<IMailHandler>();
+        private List<MailHandler> handlers = new List<MailHandler>();
 
         public MailRoom()
         {
-            this.handlers.AddRange(typeof(MailRoom).Assembly.DefinedTypes.Where(c => c == typeof(IMailHandler)
+            this.handlers.AddRange(typeof(MailRoom).Assembly.DefinedTypes.Where(c => c == typeof(MailHandler)
                                                                             && !c.IsAbstract
                                                                             && c.IsClass)
-                                                  .Select(t => (IMailHandler)Activator.CreateInstance(t)));
+                                                  .Select(t => (MailHandler)Activator.CreateInstance(t)));
         }
 
         public void Handle(Mail mail)
