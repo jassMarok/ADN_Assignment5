@@ -11,7 +11,7 @@ namespace Problem3
 
         public MailRoom()
         {
-            this.handlers.AddRange(typeof(MailRoom).Assembly.DefinedTypes.Where(c => c == typeof(MailHandler)
+            this.handlers.AddRange(typeof(MailRoom).Assembly.DefinedTypes.Where(c => typeof(MailHandler).IsAssignableFrom(c)
                                                                             && !c.IsAbstract
                                                                             && c.IsClass)
                                                   .Select(t => (MailHandler)Activator.CreateInstance(t)));
