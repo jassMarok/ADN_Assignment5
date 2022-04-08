@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using Problem1;
+using Problem4;
 
 namespace TestProject
 {
@@ -41,6 +42,32 @@ namespace TestProject
             var actual = myStuffed.AmountOfWaterForRefill();
             Assert.Equal(myStuffed.Weight*1.5, actual);
 
+        }
+
+        [Fact]
+        public void TestLastMessageToBidder()
+        {
+            var provider = new Auctioneer();
+            var auctionItem = new AuctionItem("MonoLog", 100.00, "1996", provider);
+
+            var receiver1 = new Bidder("John", auctionItem, 130);
+            receiver1.Subscribe(provider);
+            var receiver2 = new Bidder("Bob", auctionItem, 200);
+            receiver2.Subscribe(provider);
+
+            receiver1.GiveNewPrice();
+            receiver2.GiveNewPrice();
+            receiver1.GiveNewPrice();
+            receiver2.GiveNewPrice();
+            receiver1.GiveNewPrice();
+            receiver2.GiveNewPrice();
+            receiver2.GiveNewPrice();
+            receiver2.GiveNewPrice();
+
+            var actual = receiver1.GetLatestMessage();
+            var expected = "Item:MonoLog - Bob raised price to 120, received by: John";
+
+            Assert.Equal(expected, actual);
         }
  
     }
