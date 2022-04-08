@@ -4,8 +4,18 @@ using System.Text;
 
 namespace Problem1
 {
+    /// <summary>
+    ///  Class for Cars, inherits base class toy Factory
+    /// </summary>
     public class Cars : ToyFactory
     {
+        /// <summary>
+        /// Constructor for Cars uses three additional unique properties  
+        /// to create a description string.
+        /// </summary>
+        /// <param name="canWheelsRotate">boolean to check is wheels can rotate</param>
+        /// <param name="numberOfDoors"> variable for number of dogs in a car </param>
+        /// <param name="canWindowsOpen"> variable to check if windows can open </param>
         public Cars(bool canWheelsRotate, int numberOfDoors, bool canWindowsOpen) {
 
             this.CanWheelsRotate = canWheelsRotate;
@@ -27,10 +37,17 @@ namespace Problem1
 
         }
 
+        /// <summary>
+        /// boolean to check is wheels can rotate
+        /// </summary>
         public bool CanWheelsRotate { get; set; }
-
+        /// <summary>
+        /// variable for number of dogs
+        /// </summary>
         public int NumberOfDoors { get; set; }
-
+        /// <summary>
+        /// variable to check if windows can open
+        /// </summary>
         public bool CanWindowsOpen { get; set; }
 
         /// <summary>
@@ -48,6 +65,10 @@ namespace Problem1
             }
         }
 
+        /// <summary>
+        /// method to check if car can be colored
+        /// </summary>
+        /// <returns></returns>
         public bool CanCarColorBeChanged() {
             if (CanWindowsOpen)
             {

@@ -1,12 +1,21 @@
-﻿using System;
+﻿///I, Damanpreet Singh, student number 000741359, certify that all code submitted is my own work;
+/// that I have not copied it from any other source.
+/// I also certify that I have not allowed my work to be copied by others.
+using System;
 
 namespace Problem1
 {
+    /// <summary>
+    /// The 'ToyCreator' abstract class
+    /// </summary>
     public abstract class ToyCreator
     {
         public abstract ToyFactory GetToy();
     }
 
+    /// <summary>
+    /// A 'Concrete CarsCreator' class
+    /// </summary>
     public class CarsCreator : ToyCreator {
 
         public override ToyFactory GetToy() {
@@ -17,6 +26,9 @@ namespace Problem1
 
     }
 
+    /// <summary>
+    /// A 'Concrete DollHousesCreator' class
+    /// </summary>
     public class DollHousesCreator : ToyCreator
     {
 
@@ -29,6 +41,9 @@ namespace Problem1
 
     }
 
+    /// <summary>
+    /// A 'Concrete RainbowStackersCreator' class
+    /// </summary>
     public class RainbowStackersCreator : ToyCreator
     {
 
@@ -41,6 +56,9 @@ namespace Problem1
 
     }
 
+    /// <summary>
+    /// A 'Concrete StuffedAnimalsCreator' class
+    /// </summary>
     public class StuffedAnimalsCreator : ToyCreator
     {
 

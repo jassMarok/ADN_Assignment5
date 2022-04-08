@@ -5,12 +5,20 @@ using System.Text;
 namespace Problem1
 {
     /// <summary>
-    /// Rainbow Stacker Toy inherited form toy factory
+    /// Class Rainbow Stacker Toy inherited form toy factory
     /// Added three additional properties canBeDissambled,numberOfColors,numberOfRainbows
     /// and Two methods MaxStackHeight ,CanARainbowBeStackedWithSameColor
     /// </summary>
     public class RainbowStackers : ToyFactory
     {
+        /// <summary>
+        /// constructor to Rainbows stacker,
+        /// uses three additional unique properties 
+        /// to create a description string
+        /// </summary>
+        /// <param name="canBeDissambled">boolean to check if rainbows can be disassembld </param>
+        /// <param name="numberOfColors">variable for different kind of colors available</param>
+        /// <param name="numberOfRainbows"> int variable to count max no. of rainbows that can be created</param>
         public RainbowStackers( bool canBeDissambled, int numberOfColors, int numberOfRainbows)
         {
             this.CanBeDissambled = canBeDissambled;
@@ -30,11 +38,17 @@ namespace Problem1
             Color = "Green";
 
         }
-
+        /// <summary>
+        /// boolean to check if rainbows can be disassembld 
+        /// </summary>
         public bool CanBeDissambled { get; set; }
-
+        /// <summary>
+        /// variable for different kind of colors available
+        /// </summary>
         public int NumberOfColors { get; set; }
-
+        /// <summary>
+        /// int variable to count max no. of rainbows that can be created
+        /// </summary>
         public int NumberOfRainbows { get; set; }
 
         /// <summary>

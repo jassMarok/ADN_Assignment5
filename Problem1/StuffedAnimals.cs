@@ -4,8 +4,19 @@ using System.Text;
 
 namespace Problem1
 {
+    /// <summary>
+    /// Class for stuffed animals, inherits base class toy Factory
+    /// </summary>
     public class StuffedAnimals : ToyFactory
     {
+        /// <summary>
+        /// Constructor for Stuffed Animals,
+        /// uses three additional unique properties for stuffed animals 
+        /// to create a description string
+        /// </summary>
+        /// <param name="canBeRestuffed"> booolean to check if the toy can be restuffed</param>
+        /// <param name="canBeWashed"> boolean to check if toy can be cleaned</param>
+        /// <param name="canTheToyBounce"> boolean to check if toy bounces when thrown</param>
         public StuffedAnimals(bool canBeRestuffed, bool canBeWashed, bool canTheToyBounce)
         {
             this.CanBeWashed = canBeWashed;
@@ -25,11 +36,17 @@ namespace Problem1
             Color = "Grey";
 
         }
-
+        /// <summary>
+        /// booolean to check if the toy can be restuffed
+        /// </summary>
         public bool CanBeRestuffed { get; set; }
-
+        /// <summary>
+        /// boolean to check if toy can be cleaned
+        /// </summary>
         public bool CanBeWashed { get; set; }
-
+        /// <summary>
+        /// boolean to check if toy bounces when thrown
+        /// </summary>
         public bool CanTheToyBounce { get; set; }
 
         /// <summary>

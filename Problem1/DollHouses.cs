@@ -4,15 +4,18 @@ using System.Text;
 
 namespace Problem1
 {
-
+    /// <summary>
+    /// Class for Doll Houses, inherits base class toy Factory
+    /// </summary>
     public class DollHouses : ToyFactory
     {
         /// <summary>
-        /// Coonstructor for Dool House
+        /// Constructor for Dool House uses three additional unique properties  
+        /// to create a description string
         /// </summary>
-        /// <param name="canRearrangeRoomsAndBuiltToys"></param>
-        /// <param name="numberOfRooms"></param>
-        /// <param name="canWindowsOpen"></param>
+        /// <param name="canRearrangeRoomsAndBuiltToys"> boolean to chekc is rooms and otehr toys are movable</param>
+        /// <param name="numberOfRooms"> int variable to count no.of rooms </param>
+        /// <param name="canWindowsOpen"> boolean to check if windows for all the rooms open </param>
         public DollHouses(bool canRearrangeRoomsAndBuiltToys, int numberOfRooms, bool canWindowsOpen)
         {
             this.CanWindowsOpen = canWindowsOpen;
@@ -33,15 +36,21 @@ namespace Problem1
             Color = "Pink";
 
         }
-
+        /// <summary>
+        /// boolean to chekc is rooms and otehr toys are movable
+        /// </summary>
         public bool CanRearrangeRoomsAndBuiltToys { get; set; }
-
+        /// <summary>
+        /// int variable to count no.of rooms
+        /// </summary>
         public int NumberOfRooms { get; set; }
-
+        /// <summary>
+        /// boolean to check if windows for all the rooms open
+        /// </summary>
         public bool CanWindowsOpen { get; set; }
 
         /// <summary>
-        /// method cehck if the rooms and toys can be moved inside
+        /// method check if the rooms and toys can be moved inside
         /// if yes will return True as dolls can be moved to sleeping rooms
         /// else falls
         /// </summary>
