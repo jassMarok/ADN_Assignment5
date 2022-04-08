@@ -9,6 +9,7 @@ namespace Problem3
         public OutOfProvinceMailHandler() : base()
         {
             MailBoxAddresses = new string[] { "AB", "BC", "MB", "NB", "NL", "NT", "NU", "ON", "PE", "QC", "SK", "YT" };
+            SetUpMailBoxes();
         }
 
         public override string Resource => "Canada";

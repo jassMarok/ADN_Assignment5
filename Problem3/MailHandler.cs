@@ -8,15 +8,20 @@ namespace Problem3
     {
         public MailHandler()
         {
-            foreach(var address in MailBoxAddresses)
-            {
-                MailBoxes.Add(new List<Mail>());
-            }
+            MailBoxes = new List<List<Mail>>();
         }
 
         public abstract string Resource { get; }
         public string[] MailBoxAddresses { get; set; }
         public List<List<Mail>> MailBoxes;
+
+        protected void SetUpMailBoxes()
+        {
+            foreach (var address in MailBoxAddresses)
+            {
+                MailBoxes.Add(new List<Mail>());
+            }
+        }
 
         public virtual void Handle(Mail mail)
         {
@@ -25,7 +30,7 @@ namespace Problem3
             {
                 if (mail.ReceiverAddress.Contains(MailBoxAddresses[i]))
                 {
-                    Console.WriteLine($"Mail from {mail.SenderName} going to {mail.ReceiverName} placed in {MailBoxAddresses[i]} mailbox");
+                    Console.WriteLine($"Mail going to {mail.ReceiverAddress} placed in {MailBoxAddresses[i]} mailbox");
                     MailBoxes[i].Add(mail);
                     sorted = true;
                     break;
@@ -35,7 +40,7 @@ namespace Problem3
             if (!sorted)
             {
                 mail.isFlagged = true;
-                Console.WriteLine($"Mail from { mail.SenderName} going to { mail.ReceiverName} placed in review queue");
+                Console.WriteLine($"Mail going to { mail.ReceiverAddress} placed in review queue");
             }
 
         }

@@ -9,6 +9,7 @@ namespace Problem3
         public TorontoMailHandler() : base()
         {
             MailBoxAddresses = new string[] { "M3C", "M4C", "M4E" };
+            SetUpMailBoxes();
         }
 
         public override string Resource => "Toronto";
